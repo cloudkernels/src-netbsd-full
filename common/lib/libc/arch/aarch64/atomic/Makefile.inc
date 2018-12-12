@@ -20,6 +20,10 @@ SRCS.atomic+=	membar_ops.S
 
 .endif
 
+.if defined(LIB) && (${LIB} == "c" || ${LIB} == "pthread")
+
 SRCS.atomic+=	atomic_init_cas.c
+
+.endif
 
 SRCS+=	${SRCS.atomic}

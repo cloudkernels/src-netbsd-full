@@ -43,11 +43,13 @@ END(_atomic_swap_64)
 ATOMIC_OP_ALIAS(atomic_swap_64,_atomic_swap_64)
 ATOMIC_OP_ALIAS(atomic_swap_ulong,_atomic_swap_64)
 ATOMIC_OP_ALIAS(atomic_swap_ptr,_atomic_swap_64)
-STRONG_ALIAS(__sync_lock_test_and_set_8,_atomic_swap_64)
+CRT_ALIAS(__sync_lock_test_and_set_8,_atomic_swap_64)
 STRONG_ALIAS(_atomic_swap_ulong,_atomic_swap_64)
 STRONG_ALIAS(_atomic_swap_ptr,_atomic_swap_64)
 
+#if (!defined(_KERNEL) || !defined(_RUMPKERNEL)) && !defined(_STANDALONE)
 ENTRY_NP(__sync_lock_release_8)
 	stlr	xzr, [x0]
 	ret
 END(__sync_lock_release_8)
+#endif

@@ -63,6 +63,7 @@ __guard_setup(void)
 		return;
 
 	len = sizeof(__stack_chk_guard);
+#if 0
 	if (__sysctl(mib, (u_int)__arraycount(mib), __stack_chk_guard, &len,
 	    NULL, 0) == -1 || len != sizeof(__stack_chk_guard)) {
 		/* If sysctl was unsuccessful, use the "terminator canary". */
@@ -71,6 +72,7 @@ __guard_setup(void)
 		((unsigned char *)(void *)__stack_chk_guard)[2] = '\n';
 		((unsigned char *)(void *)__stack_chk_guard)[3] = 255;
 	}
+#endif
 }
 
 /*ARGSUSED*/

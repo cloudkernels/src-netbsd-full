@@ -44,7 +44,7 @@ END(_atomic_nand_32)
 
 ATOMIC_OP_ALIAS(atomic_nand_32,_atomic_nand_32)
 ATOMIC_OP_ALIAS(atomic_nand_uint,_atomic_nand_32)
-STRONG_ALIAS(__sync_fetch_and_nand_4,_atomic_nand_32)
+CRT_ALIAS(__sync_fetch_and_nand_4,_atomic_nand_32)
 STRONG_ALIAS(_atomic_nand_uint,_atomic_nand_32)
 
 ENTRY_NP(_atomic_nand_32_nv)
@@ -60,5 +60,5 @@ END(_atomic_nand_32_nv)
 
 ATOMIC_OP_ALIAS(atomic_nand_32_nv,_atomic_nand_32_nv)
 ATOMIC_OP_ALIAS(atomic_nand_uint_nv,_atomic_nand_32_nv)
-STRONG_ALIAS(__sync_nand_and_fetch_4,_atomic_nand_32_nv)
+CRT_ALIAS(__sync_nand_and_fetch_4,_atomic_nand_32_nv)
 STRONG_ALIAS(_atomic_nand_uint_nv,_atomic_nand_32_nv)

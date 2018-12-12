@@ -102,7 +102,6 @@ struct ps_strings *__ps_strings;
 void __section(".text.startup")
 _libc_init(void)
 {
-
 	if (libc_initialised)
 		return;
 

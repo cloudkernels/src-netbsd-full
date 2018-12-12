@@ -48,7 +48,9 @@ ATOMIC_OP_ALIAS(membar_enter,_membar_sync)
 ATOMIC_OP_ALIAS(membar_exit,_membar_sync)
 ATOMIC_OP_ALIAS(membar_consumer,_membar_sync)
 ATOMIC_OP_ALIAS(membar_read,_membar_sync)
+#ifndef _RUMPKERNEL
 STRONG_ALIAS(__sync_synchronize,_membar_sync)
+#endif
 STRONG_ALIAS(_membar_enter,_membar_sync)
 STRONG_ALIAS(_membar_exit,_membar_sync)
 STRONG_ALIAS(_membar_consumer,_membar_sync)

@@ -130,6 +130,14 @@ END(_atomic_##OP##_64_nv)
 
 #define	ATOMIC_OP_ALIAS(a,s)	WEAK_ALIAS(a,s)
 
+#ifdef _LIBC
+#define	CRT_ALIAS(a,s)		STRONG_ALIAS(a,s)
+#endif
+
 #endif /* _KERNEL */
+
+#ifndef CRT_ALIAS
+#define	CRT_ALIAS(a,s)
+#endif
 
 #endif /* _ATOMIC_OP_ASM_H_ */

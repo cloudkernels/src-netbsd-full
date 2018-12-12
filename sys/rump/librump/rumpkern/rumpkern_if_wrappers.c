@@ -155,7 +155,6 @@ rump_pub_lwproc_newlwp(pid_t arg1)
 void
 rump_pub_lwproc_switch(struct lwp *arg1)
 {
-
 	rump_schedule();
 	rump_lwproc_switch(arg1);
 	rump_unschedule();

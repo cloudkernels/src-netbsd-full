@@ -86,11 +86,12 @@ percpu_t *ipsecstat_percpu;
 u_int ipsec_spdgen;
 
 /* sysctl */
+/*
 void
 unp_sysctl_create(struct sysctllog **clog)
 {
 }
-
+*/
 __weak_alias(ah4_ctlinput,rumpnet_stub);
 __weak_alias(ah6_ctlinput,rumpnet_stub);
 __weak_alias(esp4_ctlinput,rumpnet_stub);

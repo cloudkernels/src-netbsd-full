@@ -1,6 +1,8 @@
 # $NetBSD: Makefile.inc,v 1.2 2015/04/15 19:13:46 mrg Exp $
 
+.if ${RUMPRUN} != "yes"
 SRCS+=	__sigaction14_sigtramp.c __sigtramp2.S
+.endif
 #SRCS+= qdivrem.c
 
 CPPFLAGS += -I.

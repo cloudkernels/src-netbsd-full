@@ -35,12 +35,12 @@ ATOMIC_OP16(or, orr)
 
 ATOMIC_OP_ALIAS(atomic_or_16,_atomic_or_16)
 ATOMIC_OP_ALIAS(atomic_or_ushort,_atomic_or_16)
-STRONG_ALIAS(__sync_fetch_and_or_2,_atomic_or_16)
+CRT_ALIAS(__sync_fetch_and_or_2,_atomic_or_16)
 STRONG_ALIAS(_atomic_or_ushort,_atomic_or_16)
 
 ATOMIC_OP16_NV(or, orr)
 
 ATOMIC_OP_ALIAS(atomic_or_16_nv,_atomic_or_16_nv)
 ATOMIC_OP_ALIAS(atomic_or_ushort_nv,_atomic_or_16_nv)
-STRONG_ALIAS(__sync_or_and_fetch_2,_atomic_or_16_nv)
+CRT_ALIAS(__sync_or_and_fetch_2,_atomic_or_16_nv)
 STRONG_ALIAS(_atomic_or_ushort_nv,_atomic_or_16_nv)

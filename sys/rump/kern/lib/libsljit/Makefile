@@ -38,5 +38,17 @@ RUMPCOMP_USER_CPPFLAGS=-I${RUMPCOMP_INCS_DIR}
 LIBDPLIBS+=	arm ${NETBSDSRCDIR}/lib/libarch
 .endif
 
+.if !empty(MACHINE_ARCH:Maarch64*) 
+SRCS+=			cpufunc.c
+RUMPCOMP_USER_SRCS=	sljit_rump.c
+.PATH:			${.CURDIR}/arch/aarch64
+
+RUMPCOMP_INCS_DIR:=	${.PARSEDIR}
+RUMPCOMP_USER_CPPFLAGS=-I${RUMPCOMP_INCS_DIR}
+
+# Link to libarm to get arm_sync_icache(2)
+LIBDPLIBS+=	aarch64 ${NETBSDSRCDIR}/lib/libarch
+.endif
+
 .include <bsd.lib.mk>
 .include <bsd.klinks.mk>

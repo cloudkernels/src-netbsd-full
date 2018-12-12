@@ -35,12 +35,12 @@ ATOMIC_OP8(or, orr)
 
 ATOMIC_OP_ALIAS(atomic_or_8,_atomic_or_8)
 ATOMIC_OP_ALIAS(atomic_or_uchar,_atomic_or_8)
-STRONG_ALIAS(__sync_fetch_and_or_1,_atomic_or_8)
+CRT_ALIAS(__sync_fetch_and_or_1,_atomic_or_8)
 STRONG_ALIAS(_atomic_or_uchar,_atomic_or_8)
 
 ATOMIC_OP8_NV(or, orr)
 
 ATOMIC_OP_ALIAS(atomic_or_8_nv,_atomic_or_8_nv)
 ATOMIC_OP_ALIAS(atomic_or_uchar_nv,_atomic_or_8_nv)
-STRONG_ALIAS(__sync_or_and_fetch_1,_atomic_or_8_nv)
+CRT_ALIAS(__sync_or_and_fetch_1,_atomic_or_8_nv)
 STRONG_ALIAS(_atomic_or_uchar_nv,_atomic_or_8_nv)

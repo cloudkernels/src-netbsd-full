@@ -31,7 +31,9 @@ __KERNEL_RCSID(0, "$NetBSD: kobj_machdep.c,v 1.2 2018/08/19 20:02:22 ryo Exp $")
 
 #define ELFSIZE		ARCH_ELFSIZE
 
+#ifdef _KERNEL_OPT
 #include "opt_ddb.h"
+#endif
 
 #include <sys/param.h>
 #include <sys/kobj.h>
