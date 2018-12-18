@@ -29,7 +29,6 @@
 #include <sys/cdefs.h>
 __RCSID("$NetBSD: sched.c,v 1.6 2018/01/04 20:57:29 kamil Exp $");
 
-#include "namespace.h"
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>
