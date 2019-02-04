@@ -655,9 +655,11 @@ pthread_exit(void *retval)
 		pthread_mutex_lock(&self->pt_lock);
 	}
 
-	pthread_mutex_unlock(&self->pt_lock);
-	__cxa_thread_run_atexit();
-	pthread_mutex_lock(&self->pt_lock);
+	if (__cxa_thread_atexit_used) {
+		pthread_mutex_unlock(&self->pt_lock);
+		__cxa_thread_run_atexit();
+		pthread_mutex_lock(&self->pt_lock);
+	}
 
 	/* Perform cleanup of thread-specific data */
 	pthread__destroy_tsd(self);
